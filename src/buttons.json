@@ -1,0 +1,19 @@
+{
+    "START": "/start",
+    "ADMIN": "/admin",
+    "WORKER": "/worker",
+    "SETTINGS": "⚙️ Настройки",
+    "USERS": "🧟‍♂️ Пользователи",
+    "STATS": "🗃 Статистика",
+    "GET_TODAY_STATS": "⏰ Сегодня",
+    "GET_TODAY_STATS_WORKER": "⏰ Статистика",
+    "GET_STATS_BY_DATES": "📆 Указать дату",
+    "BACK_TO_ADMIN_MENU": "👈 Вернуться в меню",
+    "ADD_WORKER": "🧳 Добавить работника",
+    "ORDER_LIST": "📃 Ордера",
+    "ADS_LIST": "📌 Обьявления",
+    "BYBIT_2FA_CODE": "🔐 Bybit код",
+    "EDIT_ROLE": { "text": "✏️ Изменить роль", "callback_data": "edit_role" },
+    "PAYMENT_RECEIVED": { "text": "Средства получены", "callback_data": "payment_received" },
+    "PAYMENT_SENT": { "text": "Средства отправлены", "callback_data": "payment_sent" }
+}

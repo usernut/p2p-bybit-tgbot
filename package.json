@@ -1,0 +1,25 @@
+{
+  "name": "p2p-bybit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "scripts": {
+    "start": "node src/bot",
+    "dev": "node src/bot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "node-fetch": "^2.6.7",
+    "notp": "^2.0.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.3",
+    "telegraf": "^4.8.5",
+    "thirty-two": "^1.0.2",
+    "ws": "^8.8.0"
+  }
+}
