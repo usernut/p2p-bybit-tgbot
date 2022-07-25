@@ -1,8 +1,9 @@
 
 const buttons = require('../../buttons.json')
 const keyboards = require('../../keyboards')
-const commandBase = require('../template')
+const commandBase = require('../command-base')
 const bybit = require('../../services/bybit')
+const Order = require('../../services/order')
 
 const command = {
     commands: buttons.ORDER_LIST,

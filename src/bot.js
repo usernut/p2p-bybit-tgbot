@@ -1,11 +1,10 @@
 require('dotenv').config()
 const { Telegraf, session } = require('telegraf')
-const { sequelize, User, Role } = require('./models')
+const { sequelize } = require('./models')
 const user = require('./services/user')
 const ws = require('./ws')
 const addAccount = require('./scenes/add-worker')
-const commands = require('./handlers/commands')
-const actions = require('./handlers/actions')
+const { commands, actions } = require('./handlers')
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
@@ -16,8 +15,6 @@ bot.use(user.middleware)
 bot.on('text', async (ctx) => {
     try {
         const text = ctx.message.text
-        const args = text.startsWith('/') ? text.split(' ') : []
-        args.shift()
         const command = commands[text.toLowerCase()]
 
         if (command?.validation(ctx)) {
@@ -50,23 +47,3 @@ sequelize.sync({}).then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
-
-// ;(async() => {
-//     // await Role.create({ title: 'ADMIN' })
-//     // await Role.create({ title: 'WORKER' })
-
-//     const user = await User.findOne({ where: { username: 'shevelyolo' } })
-//     const role = await Role.findOne({ where: { title: 'ADMIN' } })
-
-//     console.log(await user.update({ role_id: role.id }))
-// })()
-
-
-/*
-user:
-telegram_id
-role
-
-roles:
-role
-*/

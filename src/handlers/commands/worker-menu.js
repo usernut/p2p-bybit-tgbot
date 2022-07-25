@@ -1,5 +1,5 @@
 const buttons = require('../../buttons')
-const commandBase = require('../template')
+const commandBase = require('../command-base')
 const keyboards = require('../../keyboards')
 
 const command = {

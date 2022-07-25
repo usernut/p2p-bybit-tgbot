@@ -1,6 +1,6 @@
 const buttons = require('../../buttons.json')
 const keyboards = require('../../keyboards')
-const commandBase = require('../template')
+const commandBase = require('../command-base')
 
 const command = {
     commands: buttons.STATS,

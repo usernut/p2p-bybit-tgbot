@@ -1,6 +1,6 @@
 const buttons = require('../../buttons.json')
 const keyboards = require('../../keyboards')
-const commandBase = require('../template')
+const commandBase = require('../command-base')
 const tfa = require('../../services/2fa')
 
 const command = {

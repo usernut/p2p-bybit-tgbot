@@ -50,7 +50,7 @@ const middleware = async (ctx, next) => {
 
     ctx.user = user
     ctx.user.data = data
-    // ctx.user.role = 'WORKER' //TODO: temp
+
     next()
 }
 

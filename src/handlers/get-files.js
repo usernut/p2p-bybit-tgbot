@@ -8,10 +8,6 @@ const getFiles = (dir, suffix = '.js') => {
     let commandFiles = []
 
     for (const file of files) {
-        if (file.name.startsWith('index')) {
-            continue
-        }
-
         if (file.isDirectory()) {
             commandFiles = [
                 ...commandFiles,

@@ -76,24 +76,6 @@ const options = {
         disable_web_page_preview: true,
         parse_mode: 'Markdown',
     })
-
-    // CUSTOM_INLINE_KEYBOARD: (...inline_keyboard) => {
-    //     return {
-    //         reply_markup: {
-    //             resize_keyboard: true,
-    //             inline_keyboard
-    //         }
-    //     }
-    // },
-
-    // WEP_APP_PAGE{ 
-    //     text: "Test web_app",
-    //     reply_markup: {
-    //         inline_keyboard: [
-    //             [{ "text": "Test web_app", "web_app": { "url": "https://telegram.mihailgok.ru" } }]
-    //         ]
-    //     }
-    // }
 }
 
 module.exports = options

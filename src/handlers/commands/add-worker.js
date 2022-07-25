@@ -1,5 +1,5 @@
 const buttons = require('../../buttons')
-const commandBase = require('../template')
+const commandBase = require('../command-base')
 
 const command = {
     commands: buttons.ADD_WORKER,
