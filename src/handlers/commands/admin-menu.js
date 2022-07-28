@@ -3,7 +3,10 @@ const keyboards = require('../../keyboards')
 const commandBase = require('../command-base')
 
 const command = {
-    commands: [ buttons.ADMIN, buttons.BACK_TO_ADMIN_MENU ],
+    commands: [ 
+        buttons.ADMIN, 
+        buttons.BACK_TO_ADMIN_MENU 
+    ],
     permissions: [ 'ADMIN' ],
     __proto__: commandBase,
 

@@ -7,9 +7,9 @@ const command = {
     permissions: [ 'WORKER', 'ADMIN' ],
     __proto__: commandBase,
 
-    callback: async (ctx) => {
+    callback: async (ctx, params) => {
         try {
-            const orderId = ctx.callbackQuery.data.split('_')[2]
+            const { orderId } = params
             const data = await bybit.paymentSent(orderId)
             
             if (!data?.result?.success) {

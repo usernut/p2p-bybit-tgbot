@@ -4,7 +4,10 @@ const keyboards = require('../../keyboards')
 const commandBase = require('../command-base')
 
 const command = {
-    commands: [ buttons.GET_TODAY_STATS, buttons.GET_TODAY_STATS_WORKER ],
+    commands: [ 
+        buttons.GET_TODAY_STATS,
+        buttons.GET_TODAY_STATS_WORKER 
+    ],
     permissions: [ 'WORKER', 'ADMIN' ],
     __proto__: commandBase,
 

@@ -8,10 +8,11 @@ const command = {
     permissions: [ 'WORKER', 'ADMIN' ],
     __proto__: commandBase,
 
-    callback: async (ctx) => {
+    callback: async (ctx, params) => {
         try {
-            const orderId = ctx.callbackQuery.data.split('_')[2]
+            const { orderId } = params
             const { code } = tfa.generateToken(process.env.BYBIT_OAUTH_TOKEN)
+            
             const data = await bybit.paymentReceived(orderId, code)
 
             if (!data?.result?.success) {

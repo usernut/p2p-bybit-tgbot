@@ -38,7 +38,7 @@ const options = {
         return {
             reply_markup: {
                 inline_keyboard: [
-                    [{ text, callback_data: `${callback_data}_${telegram_id}`}]
+                    [{ text, callback_data: JSON.stringify({ callback_data, params: { telegram_id } }) }]
                 ]
             }
         }
@@ -52,7 +52,7 @@ const options = {
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [
-                    [{ text, callback_data: `${callback_data}_${orderId}`}]
+                    [{ text, callback_data: JSON.stringify({ callback_data, params: { orderId } }) }]
                 ]
             }
         }
@@ -66,7 +66,7 @@ const options = {
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [
-                    [{ text, callback_data: `${callback_data}_${orderId}`}]
+                    [{ text, callback_data: JSON.stringify({ callback_data, params: { orderId } }) }]
                 ]
             }
         }
@@ -74,7 +74,7 @@ const options = {
 
     DEFAULT: () => ({
         disable_web_page_preview: true,
-        parse_mode: 'Markdown',
+        parse_mode: 'Markdown'
     })
 }
 

@@ -1,12 +1,4 @@
-const { getFiles } = require('./get-files')
-const { getCommands } = require('./get-commands')
+const commands = require('./commands')
+const actions = require('./actions')
 
-const commandFiles = getFiles(__dirname + '/commands')
-const actionFiles = getFiles(__dirname + '/actions')
-
-const commands = getCommands(commandFiles)
-const actions = getCommands(actionFiles)
-
-const handlers = { commands, actions }
-
-module.exports = handlers
+module.exports = { commands, actions }
