@@ -22,7 +22,7 @@ class Order {
     }
 
     get #cardInfo() {
-        return `Tinkoff - *${this.payment.realName || 'Имя не указано'}*\n\`${this.payment.accountNo}\``
+        return `Tinkoff - *${this.payment.realName}*\n\`${this.payment.accountNo}\``
     }
 
     get text() {
