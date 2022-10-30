@@ -8,9 +8,9 @@ const command = {
     permissions: [ 'ADMIN' ],
     __proto__: commandBase,
 
-    callback: (ctx) => {
+    callback: async (ctx) => {
         const { code, remaining } = tfa.generateToken(process.env.BYBIT_OAUTH_TOKEN)
-        ctx.reply(`\`${code}\`, осталось ${remaining} сек.`, keyboards.DEFAULT())
+        await ctx.reply(`\`${code}\`, осталось ${remaining} сек.`, keyboards.common())
     }
 }
 

@@ -16,7 +16,7 @@ const commandBase = {
             return true
         } 
 
-        ctx.reply(ctx.i18n.t(this.permissionError))
+        ctx.reply(this.permissionError)
         return false
     }
 }

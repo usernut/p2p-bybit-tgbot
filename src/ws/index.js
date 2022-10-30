@@ -35,25 +35,25 @@ const connect = async (bot) => {
             const orderData = await bybit.getOrderById(content.data.id)
             
             const order = new Order(orderData)
-            const keyboard = order.side ? keyboards.PAYMENT_RECEIVED(order.id) : keyboards.PAYMENT_SENT(order.id)
+            const keyboard = order.side ? keyboards.paymentReceived(order.id) : keyboards.paymentSent(order.id)
 
-            bot.telegram.sendMessage(374662940, order.text, keyboard)
+            await bot.telegram.sendMessage(374662940, order.text, keyboard)
         }
 
         if (event === 'msg' && content.topic === 'OTC_ORDER_STATUS' && content.type === 'STATUS_CHANGE' && content.data.side && content.data.status === 50) {
             const orderData = await bybit.getOrderById(content.data.id)
 
-            bot.telegram.sendMessage(374662940, `Вы получили ${orderData.quantity} ${orderData.tokenId}`)
+            await bot.telegram.sendMessage(374662940, `Вы получили ${orderData.quantity} ${orderData.tokenId}`)
         }
 
         if (content?.topic === 'OTC_USER_CHAT_MSG' && content.type === 'RECEIVE' && content.data.roleType === 'user' && content.data.contentType === 'str') {
             const orderData = await bybit.getOrderById(content.data.orderId)
             const order = new Order(orderData)
             
-            bot.telegram.sendMessage(
+            await bot.telegram.sendMessage(
                 374662940, 
                 `[${order.username}](https://www.bybit.com/fiat/trade/otc/orderList/${order.id}): ${content.data.message}`, 
-                { parse_mode: 'Markdown', disable_web_page_preview: true }
+                keyboards.common()
             )
         }
     })

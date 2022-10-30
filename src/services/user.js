@@ -39,7 +39,11 @@ const getUsersWithRole = async () => {
 }
 
 const middleware = async (ctx, next) => {
-    const { id, username } = ctx.callbackQuery?.from || ctx.message?.from
+    const { from } = ctx.callbackQuery || ctx.message
+
+    const id = from.id
+    const username = from.username || from.first_name
+    // const { id, username } = ctx.callbackQuery?.from || ctx.message?.from
     const data = ctx.callbackQuery?.data || ctx.message?.text
     
     const user = await getUserByTelegramId(id) || await create(id, username)

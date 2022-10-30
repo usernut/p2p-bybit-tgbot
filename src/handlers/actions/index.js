@@ -5,21 +5,22 @@ const composer = new Composer()
 const commandFiles = getFiles(__dirname)
 const actions = {}
 
-for (const commandFile of commandFiles) {
-    const options = require(commandFile)
-    const commands = options.commands
-    
-    if (!commands) {
-        continue
-    }
+commandFiles.forEach((commandFile) => {
+	const options = require(commandFile)
+	const { commands } = options
 
-    if (Array.isArray(commands)) {
-        commands.forEach(c => actions[c] = options)
-        continue
-    }
+	if (!commands) {
+		return
+	}
 
-    actions[commands] = options
-}
+	if (Array.isArray(commands)) {
+		return commands.forEach((c) => {
+			actions[c] = options
+		})
+	}
+
+	actions[commands] = options
+})
 
 composer.on('callback_query', async (ctx) => {
     try {
@@ -30,9 +31,9 @@ composer.on('callback_query', async (ctx) => {
             action.callback(ctx, params)
         }
     } catch ({ message }) {
-        ctx.reply('Что то пошло не так')
-        console.log(`[error]: ${message}`)
-    }
+		await ctx.reply('Что то пошло не так')
+		console.log(`[error]: ${message}`)
+	}
 })
 
 module.exports = composer

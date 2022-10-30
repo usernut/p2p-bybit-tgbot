@@ -15,7 +15,7 @@ const command = {
         const [ day, month, year ] = new Date().toLocaleDateString().split('.')
         const { buy, sell, turnover } = await stats.getStats(`${month}.${day}.${year}`)
     
-        ctx.reply(`(Buy \`${buy.count}\` | \`${sell.count}\` Sell)\nОборот: \`${turnover}\``, keyboards.DEFAULT())
+        await ctx.reply(`(Buy \`${buy.count}\` | \`${sell.count}\` Sell)\nОборот: \`${turnover}\``, keyboards.common())
     }
 }
 

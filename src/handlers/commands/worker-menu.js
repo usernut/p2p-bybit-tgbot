@@ -7,8 +7,8 @@ const command = {
     permissions: [ 'WORKER', 'ADMIN' ],
     __proto__: commandBase,
 
-    callback: (ctx) => {
-        ctx.reply('Меню работника', keyboards.WORKER_MENU())
+    callback: async (ctx) => {
+        await ctx.reply('Меню работника', keyboards.workerMenu())
     }
 }
 

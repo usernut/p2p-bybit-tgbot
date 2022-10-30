@@ -10,7 +10,6 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
 bot.use(
     session(),
-    i18n.middleware(),
     user.middleware,
     addAccount.middleware()
 )
