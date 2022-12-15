@@ -4,7 +4,7 @@ const { sequelize } = require('./models')
 const user = require('./services/user')
 const ws = require('./ws')
 const addAccount = require('./scenes/add-worker')
-const { commands, actions } = require('./handlers')
+const { commands, actions } = require('./controllers')
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
